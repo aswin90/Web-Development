@@ -1,0 +1,172 @@
+﻿<html>
+<head>
+    <title>Light Box JS</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <br />
+        <br />
+        <h3>Light Box jQuery</h3>
+        <br />
+        <p>
+            The jQuery plays an important role in acheiving this effect.
+        </p>
+        <p>
+            On click of an image, &lt;div&gt; with lightbox and&nbsp;lightbox-shadow id&#39;s are added to the image as below:
+        </p>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; if ($(&#39;#lightbox&#39;).size() == 0) {</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var theLightbox = $(&#39;&lt;div id=&quot;lightbox&quot;/&gt;&#39;);</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var theShadow = $(&#39;&lt;div id=&quot;lightbox-shadow&quot;/&gt;&#39;);</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $(theShadow).click(function (e) {</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; closeLightbox();</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $(&#39;body&#39;).append(theShadow);</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $(&#39;body&#39;).append(theLightbox);</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; }</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            Now an AJAX call is made which loads the image with the Light Box effect. While the image is loaded in the Light Box effect, a message &#39;Loading...&#39; is added to the page.
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <div>
+                <strong>if (ajaxContentUrl != null) {</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $(&#39;#lightbox&#39;).append(&#39;&lt;p class=&quot;loading&quot;&gt;Loading...&lt;/p&gt;&#39;);</strong>
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $.ajax({</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; type: &#39;GET&#39;,</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url: ajaxContentUrl,</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; success: function (data) {</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $(&#39;#lightbox&#39;).empty();</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $(&#39;#lightbox&#39;).append(data);</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; error: function () {</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; alert(&#39;AJAX Failure!&#39;);</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; }</strong>
+            </div>
+        </div>
+        <p>
+            To close the Light Box effect, the &lt;div&gt; with the id&#39;s are hidden. When the next image, is to be loaded in the Light Box effect, the previous content is cleared and the new image is loaded.
+        </p>
+        <p>
+            &nbsp;
+        </p>
+        <div>
+            <strong>function closeLightbox() {</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp;&nbsp;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; (function ($) {</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; $(&#39;#lightbox&#39;).hide();</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; $(&#39;#lightbox-shadow&#39;).hide();</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; $(&#39;#lightbox&#39;).empty();</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; })(jQuery);&nbsp;</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>}</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/LightBox/lightBoxJS.html" target="_blank">Click here to view the JS file</a>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+    </div>
+</body>
+</html>

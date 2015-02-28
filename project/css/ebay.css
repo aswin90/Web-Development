@@ -1,0 +1,46 @@
+﻿html,
+body {
+    height: 100%;
+}
+
+#footer {
+    height: 60px;
+    background-color: #E8E3E3;
+    width:89%;
+    margin-top: 1%;
+    margin-left: 6%;
+    margin-right: 5%;
+}
+
+.footer-text{
+    padding-top: 10px; 
+    padding-bottom: 10px;
+}
+
+body {
+    margin: 20px;
+    margin-bottom: 60px;
+}
+
+.body-height{
+    min-height: 100%;
+    height: auto;
+}
+
+body{
+    margin: 20px;
+}
+
+body{
+    margin: 20px;
+}
+
+.navbar{
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.borderless tbody tr td, .borderless thead tr th {
+    border: none;
+}
+

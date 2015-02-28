@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>HTML5 Input Elements</title>
+    <style>
+        div {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-right: 50px;
+            margin-left: 50px;
+        }
+    </style>
+    <script type="text/javascript">
+        function getRangeVal(val) {
+            document.getElementById('rangeVal').value = val;
+        }
+        function testResults() {
+            var name1 = document.getElementById('namefield1').value;
+            var gender = "Female";
+            if (document.getElementById('gendermale').checked == true)
+                gender = "Male";
+            var numVal = document.getElementById('numval').value
+            var dateval = document.getElementById('dateval').value;
+            var timeval = document.getElementById('timeval').value;
+            var emailVal = document.getElementById('emailVal').value
+            var rangeVal = document.getElementById('rangeVal').value;
+            
+            alert("The following values were submitted \n Name - " + name1 + "\n Gender - " + gender + "\n Number - " + numVal + "\n Date - " + dateval + "\n Time - " + timeval + "\n Duration (mins) - " + rangeVal + "\n E-mail id - " + emailVal);
+        }
+    </script>
+</head>
+<body>
+    <div id="head">
+        <h1>HTML Experiments</h1>
+    </div>
+    <div id="body">
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <h2>Schedule an appointment</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Name
+                    </td>
+                    <td>
+                        <input type="text" name="nameval" id="namefield1" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gender
+                    </td>
+                    <td>
+                        <input type="radio" name="gender" id="gendermale" value="Male" checked="checked" /> Male
+                        <input type="radio" name="gender" id="genderfemale" value="Female" /> Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Your number
+                    </td>
+                    <td>
+                        <input type="number" name="numval" id="numval" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Select a date
+                    </td>
+                    <td>
+                        <input type="date" name="dateval" id="dateval" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Select a time
+                    </td>
+                    <td>
+                        <input type="time" name="timeval" id="timeval" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Duration (mins)
+                    </td>
+                    <td>
+                        <input type="range" name="slider" min="0" max="15" onchange="getRangeVal(this.value);" required />
+                        <input type="text" id="rangeVal" style="border: none" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Enter email-id
+                    </td>
+                    <td>
+                        <input type="email" name="emailVal" id="emailVal" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center">
+                        <input type="button" onclick="testResults()" value="Click Here!">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div id="foot" style="align-content : center">
+
+    </div>
+
+    <hr />
+
+	<p>
+			In this experiment, I have explored the various form controls in HTML5 such as Text Input, Radio Buttons, Number, Date, Time, Range Slider, Email fields.</p>
+		<p>
+			The Text Input - Used to get text input from the user. The syntax for the Text Input is as follows:</p>
+		<p>
+			<strong>&lt;input type=&quot;text&quot; name=&quot;nameval&quot; id=&quot;namefield1&quot; required /&gt;</strong></p>
+		<p>
+			Radio Field - Used to get</p>
+		<p>
+			<strong>&lt;input type=&quot;radio&quot; name=&quot;genderval&quot; id=&quot;genderval&quot; value=&quot;Male&quot; required /&gt;Male</strong></p>
+		<p>
+			Number - Used to get number input from the user. The syntax for the Number Input is as follows:</p>
+		<p>
+			<strong>&lt;input type=&quot;number&quot; name=&quot;numval&quot; id=&quot;numval&quot; required /&gt;</strong></p>
+		<p>
+			Date Field - Used to get date input from the user. The syntax for the Date Input is as follows:</p>
+		<p>
+			<strong>&lt;input type=&quot;date&quot; name=&quot;dateval&quot; id=&quot;dateval&quot; required /&gt;</strong></p>
+		<p>
+			Time - Used to get Time input from the user. The syntax for the Time Input is as follows:</p>
+		<p>
+			<strong>&lt;input type=&quot;time&quot; name=&quot;timeval&quot; id=&quot;timeval&quot; required /&gt;</strong></p>
+		<p>
+			Range Slider - Used to get a range from the user. The syntax for the Range is as follows:</p>
+		<p>
+			<strong>&lt;input type=&quot;range&quot; name=&quot;slider&quot; min=&quot;0&quot; max=&quot;15&quot; onchange=&quot;getRangeVal(this.value);&quot; required /&gt;</strong></p>
+		<p>
+			Email - Used to get Email input from the user. The syntax for the Email Input is as follows:</p>
+		<p>
+			<strong>&lt;input type=&quot;email&quot; name=&quot;emailVal&quot; id=&quot;emailVal&quot; required /&gt;</strong></p>
+		<p>
+			&nbsp;</p>
+		<p>
+			When the &#39;Click Here&#39; button is clicked, the values entered are displayed in an alert box. I&#39;ve used JavaScript for this. The values entered in the form are retrived using document.getElementById.</p>
+		<p>
+			<a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/HTML5/html5_form.html" target="_blank">Click here to view the Source Code</a></p>
+		<p>
+			Reference:</p>
+		<p>
+			<a href="http://www.w3schools.com/" target="_blank">W3Schools</a></p>		
+
+
+</body>
+</html>

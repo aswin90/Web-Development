@@ -1,0 +1,2 @@
+../../story/whatisnext.htm?../experiments/ResponsiveDesign/story.txt			What is Next?
+../ResponsiveDesign/ResponsiveWebDesign.html			  			Responsive Web Design

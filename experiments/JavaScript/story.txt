@@ -1,0 +1,2 @@
+../../story/whatisnext.htm?../experiments/JavaScript/story.txt			What is Next?
+../JavaScript/Calculator.html			  				Simple Calculator

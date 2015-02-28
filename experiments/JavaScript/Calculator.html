@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" type="text/css" href="resources/Calculator.css">
+    
+</head>
+<body>
+    <div id="calc">
+
+        <div class="top">
+            <span class="clear">C</span>
+            <div class="screen"></div>
+            </div>
+
+            <div class="keys">
+
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+                <span class="operator">+</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+                <span class="operator">-</span>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span class="operator">/</span>
+                <span>0</span>
+                <span>.</span>
+                <span class="eval">=</span>
+                <span class="operator">*</span>
+
+            </div>
+        </div>
+
+    <script src="resources/Calculator.js"></script>
+
+<hr />
+
+<div>
+			In this experiment, I&#39;ve designed a simple calculator using Javascript and CSS.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			Inorder to get the layout of a simple calculator, I&#39;ve set the width of the calculator space to 325px as shown below:</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>#calc {</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; width: 325px;</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; height: auto;</strong></div>
+		<div>
+			<strong>}</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			And, to get the C button and the screen of top the keys, I&#39;ve put them in a separate &lt;div&gt; tag and to differentiate the screen from the rest of the calculator, I have&nbsp;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			set the background color of the screen to a different value.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			The hover background color for the keys are set as below:</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>.keys span:hover {</strong></div>
+		<div>
+			<strong>background: #9c89f6;<span class="Apple-tab-span" style="white-space:pre"> </span></strong></div>
+		<div>
+			<strong>}</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>.keys span.eval:hover {</strong></div>
+		<div>
+			<strong>background: #abb850;</strong></div>
+		<div>
+			<strong>}</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>.top span.clear:hover {</strong></div>
+		<div>
+			<strong>background: #9c89f6;</strong></div>
+		<div>
+			<strong>}</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			Now, let&#39;s move on to the JavaScript part of the experiment.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			To get the values of the keyevent, I use:</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>document.querySelectorAll(&#39;#calc span&#39;);</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			Next, iterating in a loop for the length of the key, if the &#39;=&#39; key is selected, the value is calculated and the value is set in the screen.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			The code illustrating this part is:</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>for (var i = 0; i &lt; keys.length; i++) {</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; keys[i].onclick = function (e) {</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; var input = document.querySelector(&#39;.screen&#39;);</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; var inputVal = input.innerHTML;</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; var btnVal = this.innerHTML;</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; if (btnVal == &#39;C&#39;) {</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; location.reload();</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; }</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; if (btnVal == &#39;=&#39;) {</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var equation = inputVal;</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (equation)</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; input.innerHTML = eval(equation);</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; }</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; else {</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; input.innerHTML += btnVal;</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; }</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>&nbsp; &nbsp; }</strong></div>
+		<div>
+			<strong>}</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/JavaScript/Calculator.html" target="_blank">Click here to see the source code</a></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/JavaScript/resources/Calculator.css" target="_blank">Click here to see the CSS file</a></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/JavaScript/resources/Calculator.js" target="_blank">Click here to see the JavaScript file</a></div>
+    
+</body>
+</html>

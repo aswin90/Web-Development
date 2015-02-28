@@ -1,0 +1,3 @@
+../../story/whatisnext.htm?../experiments/ImageSlider/story.txt		What is Next?
+../ImageSlider/imageSlide.html			  			Image Slider 
+../ImageSlider/imageSlideJS.html			  		Image Slider jQuery Functionality

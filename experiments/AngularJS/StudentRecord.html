@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Angular JS NU Student Record</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body ng-app style="background-color: #E1ED9A">
+    <div class="container" ng-controller="StudentRecordController">
+        <h1>NU Student Record</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>NU ID</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>E-mail ID</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td><input class="form-control" ng-model="newStudent.id" placeholder="NU ID" /></td>
+                    <td><input class="form-control" ng-model="newStudent.lastname" placeholder="Last Name" /></td>
+                    <td><input class="form-control" ng-model="newStudent.firstname" placeholder="First Name" /></td>
+                    <td><input class="form-control" ng-model="newStudent.email" placeholder="Email Id" /></td>
+                    <td>
+                        <button ng-click="add()" class="btn btn-success">Add</button>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="student in students">
+                    <td>{{student.id}}</td>
+                    <td>{{student.lastname}}</td>
+                    <td>{{student.firstname}}</td>
+                    <td>{{student.email}}</td>
+                    <td>
+                        <button class="btn btn-danger" ng-click="delete(student)">Delete</button>
+                        <button class="btn btn-warning" ng-click="select(student)">Select</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function StudentRecordController($scope) {
+        var student1 = {
+            id: "00114477",
+            lastname: "Murugapan",
+            firstname: "Aswin Muthiah",
+            email: "aswin90@ccs.neu.edu",
+        };
+        var student2 = {
+            id: "00569841",
+            lastname: "Noah",
+            firstname: "Austin",
+            email: "austin@ccs.neu.edu",
+        };
+        var student3 = {
+            id: "04589654",
+            lastname: "Nagaraj",
+            firstname: "Mani",
+            email: "mani@ccs.neu.edu",
+        };
+        var student4 = {
+            id: "01569852",
+            lastname: "Mahendra",
+            firstname: "Srithar",
+            email: "srithar@ccs.neu.edu",
+        };
+        var student5 = {
+            id: "06879545",
+            lastname: "Balaji",
+            firstname: "Suresh",
+            email: "suresh@ccs.neu.edu",
+        };
+        var student6 = {
+            id: "03548975",
+            lastname: "Babu",
+            firstname: "Arun",
+            email: "arun@ccs.neu.edu",
+        };
+        var students = [student1, student2, student3, student4, student5];
+        $scope.students = students;
+
+        $scope.select = function (student) {
+            console.log(student);
+            $scope.newStudent = student;
+        }
+
+        $scope.delete = function (student) {
+            var index = $scope.students.indexOf(student);
+            $scope.students.splice(index, 1);
+        }
+        $scope.add = function () {
+            console.log($scope.newStudent);
+            var student = {
+                id: $scope.newStudent.id,
+                lastname: $scope.newStudent.lastname,
+                firstname: $scope.newStudent.firstname,
+                email: $scope.newStudent.email,
+            };
+            $scope.students.push(student);
+        }
+    }
+    </script>
+
+<hr />
+
+<div>
+			In this experiment, I&#39;ve used AngularJS to display an array of values passed from the script.&nbsp;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			I&#39;ve linked AngularJS and Bootstrap CSS through from CDN to the HTML page as shown below:</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js&quot;&gt;&lt;/script&gt;</strong></div>
+		<div>
+			<strong>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css&quot;&gt;</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			In the &lt;body&gt; of the HTML, I&#39;ve used the ng-app directive to designate the root element of the application.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>&lt;body ng-app&gt;</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			In the &lt;div&gt; following the &lt;body&gt;, the ng-controller is given the value &quot;StudentRecordController&quot;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>&lt;div class=&quot;container&quot; ng-controller=&quot;StudentRecordController&quot;&gt;</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			To manipulate the rows for the array, the ng-repeat directive has been used.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>&lt;tr ng-repeat=&quot;student in students&quot;&gt;</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			Now in the function StudentRecordController the array of students is created and the array is passed to $scope:</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>$scope.students = students;</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			For the Add functionality, the values entered in the respective fields are set to a student and the student is pushed to the array</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp;$scope.add = function () {</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; console.log($scope.newStudent);</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var student = {</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; id: $scope.newStudent.id,</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lastname: $scope.newStudent.lastname,</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; firstname: $scope.newStudent.firstname,</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; email: $scope.newStudent.email,</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; };</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $scope.students.push(student);</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; }</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			For the Delete functionality, the index of the row is passed and the row is spliced off from the array</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>&nbsp;$scope.delete = function (student) {</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var index = $scope.students.indexOf(student);</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $scope.students.splice(index, 1);</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; }</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			For the Select functionality, the student is passed to the scope.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>&nbsp;$scope.select = function (student) {</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; console.log(student);</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $scope.newStudent = student;</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; }</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/AngularJS/StudentRecord.html" target="_blank">Click here to see the source code</a></div>
+
+</body>
+</html>

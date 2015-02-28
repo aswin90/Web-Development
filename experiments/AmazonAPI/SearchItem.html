@@ -1,0 +1,300 @@
+<html>
+	<head>
+		<title></title>
+                <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+        <div class="container">
+            <div>
+                &nbsp;
+            </div>
+		<p>
+			In this experiment, I have worked on the backend C# for the Amazon Search API.</p>
+		<div>
+			using System;</div>
+		<div>
+			using System.Collections.Generic;</div>
+		<div>
+			using System.Text;</div>
+		<div>
+			using System.Net;</div>
+		<div>
+			using System.IO;</div>
+		<div>
+			using System.Xml;</div>
+		<div>
+			using System.Xml.XPath;</div>
+		<div>
+			using System.Linq;</div>
+		<div>
+			using System.Xml.Linq;</div>
+		<div>
+			using System.Web.UI;</div>
+		<div>
+			using neu.edu.ccis.aswin90;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			namespace neu.edu.ccis.aswin90</div>
+		<div>
+			{</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp; &nbsp; public class SearchItem</div>
+		<div>
+			&nbsp; &nbsp; {</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; // Initializing class variables necessary for</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; // calling web service</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; private const string AWS_ACCESS_KEY_ID_IDENTIFIER = &quot;AKIAILZPCF43N5B5UQFA&quot;;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; private const string AWS_SECRET_KEY_IDENTIFIER = &quot;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&quot;;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; private const string DEST = &quot;webservices.amazon.com&quot;;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; private const string NAMESPACE = &quot;http://webservices.amazon.com/AWSECommerceService/2009-03-31&quot;;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; private const string ITEMID = &quot;0545010225&quot;;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; private const string ENDPOINT = &quot;http://ecs.amazonaws.com/onca/xml&quot;;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; public XElement getOutputXml(Page page, string keywords)</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; {</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SignedRequestHelper helper = new SignedRequestHelper(</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AWS_ACCESS_KEY_ID_IDENTIFIER,</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AWS_SECRET_KEY_IDENTIFIER,</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DEST);</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; String requestUrl;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; XElement xdoc = null;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; String[] Keywords = new String[] {</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; keywords,</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;};</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach (String keyword in Keywords)</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; String requestString = &quot;Service=AWSECommerceService&quot;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + &quot;&amp;Version=2011-08-01&quot;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + &quot;&amp;Operation=ItemSearch&quot;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + &quot;&amp;AssociateTag=ecommercepric-20&quot;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + &quot;&amp;SearchIndex=Books&quot;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + &quot;&amp;Sort=relevancerank&quot;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + &quot;&amp;ResponseGroup=ItemAttributes,Images&quot;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + &quot;&amp;Keywords=&quot; + keyword</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; requestUrl = helper.Sign(requestString);</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; try</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WebRequest request = HttpWebRequest.Create(requestUrl);</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WebResponse response = request.GetResponse();</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; XmlDocument doc = new XmlDocument();</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Stream responseStream = response.GetResponseStream();</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //doc.Load(response.GetResponseStream());</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; doc.Load(responseStream);</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; XmlElement root = doc.DocumentElement;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; string xml = root.InnerXml;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; string fullxml = &quot;&lt;root&gt;&quot; + xml + &quot;&lt;/root&gt;&quot;;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TextReader tr = new StringReader(fullxml);</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; XElement eroot = XElement.Load(tr);</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return eroot;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; catch (Exception e)</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.Console.WriteLine(&quot;Caught Exception: &quot; + e.Message);</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; System.Console.WriteLine(&quot;Stack Trace: &quot; + e.StackTrace);</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return xdoc;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return xdoc;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; }</div>
+		<div>
+			&nbsp; &nbsp; }</div>
+		<div>
+			}</div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                In the C# file, a call is made to the Amazon API and the reponse XML is returned.
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                The <strong>getOutputXml(Page page, string keywords)</strong> is called and the keyword the user entered is passed to this function.
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                Amazon API can be divided into two parts, the Unsigned URL and the Signed URL.
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                The unsigned url consists of the API call parameters and this URL is passed to a Sign function where a base64-encoded HMAC_SHA256 key is generated with the AWS secret key and the signature is appended to the URL.
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                In the <strong>getOutputXml</strong> method, the Unsigned URL is constructed for every keyword:
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                <strong>String requestString = &quot;Service=AWSECommerceService&quot;</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + &quot;&amp;Version=2011-08-01&quot;&nbsp;</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + &quot;&amp;Operation=ItemSearch&quot;</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + &quot;&amp;AssociateTag=ecommercepric-20&quot;</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + &quot;&amp;SearchIndex=Books&quot;</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + &quot;&amp;Sort=relevancerank&quot;</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + &quot;&amp;ResponseGroup=ItemAttributes,Images&quot;</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; + &quot;&amp;Keywords=&quot; + keyword</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ;</strong>
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                This requestString is passed to Sign function which constructs the Signed URL.
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                The API call is made as follows:
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                <strong>WebRequest request = HttpWebRequest.Create(requestUrl);</strong>
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                The XML response is stored in as:
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                <strong>WebResponse response = request.GetResponse();</strong>
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/app_code/AmazonAPIExperiment/SearchItem.cs" target="_blank">To see the SearchItem C# file click here</a>
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/app_code/AmazonAPIExperiment/SignedRequestHelper.cs" target="_blank">To see the SignedRequestHelper C# file click here</a>
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                References
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                <a href="http://docs.aws.amazon.com/AWSECommerceService/latest/DG/ItemSearch.html" target="_blank">Amazon Product Search API</a>
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                <a href="http://stackoverflow.com/" target="_blank">Stack Overflow</a>
+            </div>
+            <div>
+                &nbsp;
+            </div>
+        </div>
+	</body>
+</html>

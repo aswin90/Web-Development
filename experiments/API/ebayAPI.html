@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ebay API</title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="resources/ebay.js"></script>
+</head>
+<body ng-app="">
+    <div class="container" ng-controller="ItemSearchController">
+        <h1>Search in ebay</h1>
+
+        <input ng-model="item" class="form-control" placeholder="Enter the item" />
+        <input ng-model="entry" class="form-control" placeholder="Enter the number of items per page" />
+        <button ng-click="getItem()" class="btn btn-primary btn-block">Get search results</button>
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Item ID</th>
+                    <th>Title</th>
+                    <th>Image</th>
+                    <th>Price-USD</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="i in items">
+                    <td>{{i.itemId[0]}}</td>
+                    <td>{{i.title[0]}}</td>
+                    <td><img ng-src="{{i.galleryURL[0]}}" /></td>
+                    <td>{{i.sellingStatus[0].currentPrice[0].__value__}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <hr />
+
+        <p>
+            In this experiment, I have explored performing a search operation in the ebay database using the ebay API.
+        </p>
+        <p>
+            In the UI part, I have used AngularJS to populate the search results. The&nbsp;<strong>ng-app&nbsp;</strong>is specified in the &lt;body&gt;.
+        </p>
+        <p>
+            The &lt;div&gt; contains the&nbsp;<strong>ng-controller=&quot;ItemSearchController&quot;</strong>
+        </p>
+        <p>
+            In the input field, the search item and the number of items per page are taken as input from the user as follows:
+        </p>
+        <p>
+            <strong>&nbsp;&lt;input ng-model=&quot;item&quot; class=&quot;form-control&quot; placeholder=&quot;Enter the item&quot; /&gt;</strong>
+        </p>
+        <div>
+            <strong>&lt;input ng-model=&quot;entry&quot; class=&quot;form-control&quot; placeholder=&quot;Enter the number of items per page&quot; /&gt;</strong>
+        </div>
+        <p>
+            On click of&nbsp;<strong>Get search results&nbsp;</strong>button, the&nbsp;<strong>getItem()</strong> is called.
+        </p>
+        <p>
+            The <strong>getItem()</strong> in the controller is as follows:
+        </p>
+        <div>
+            <strong>&nbsp;&nbsp; &nbsp; $scope.getItem = function () {</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; var item = $scope.item;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; var entry = $scope.entry;</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; url += &quot;&amp;keywords=&quot; + item;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; url += &quot;&amp;paginationInput.entriesPerPage=&quot; + entry;</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; console.log(url);</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; $http.get(url).success(function (response) {</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $scope.items = response.findItemsByKeywordsResponse[0].searchResult[0].item;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; });</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; }</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            This calls the API URL where the search query and the number of items is appended and the data is fetched.
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            The data returned from the database is iterated in the UI. The&nbsp;<strong>ng-repeat</strong> is set in the &lt;tr&gt;.
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/API/ebayAPI.html" target="_blank">Click here to see the source code</a>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/API/resources/ebay.js" target="_blank">Click here to see the JavaScript source code</a>
+        </div>
+        <div>
+	    <br />
+            <b>Reference:</b>
+            <br />
+            <a href="https://go.developer.ebay.com/developers/ebay/products/what-ebay-api" target="_blank">ebay Developer Page</a>
+            <br />
+            <a href="https://go.developer.ebay.com/developers/ebay/documentation-tools" target="_blank">ebay Developer Documentation</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+../../story/whatisnext.htm?../experiments/jQuery/story.txt			What is Next?
+../jQuery/jQueryInteractions.html			  			jQuery Interactions
+../jQuery/xmlParser.html			  				Parse XML using jQuery
+../jQuery/tooltip.html			  					Tooltip using jQuery
+../jQuery/accordian.html			  				Accordian using jQuery
+../jQuery/datePicker.html			  				Date Picker using jQuery

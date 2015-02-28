@@ -1,0 +1,30 @@
+﻿html,
+body {
+    height: 100%;
+}
+
+#footer {
+    height: 60px;
+    background-color: #E8E3E3;
+    width:88%;
+
+    margin-top: 2%;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+.footer-text{
+    padding-top: 10px; 
+    padding-bottom: 10px;
+}
+
+body {
+    margin: 20px;
+    margin-bottom: 60px;
+}
+
+.body-height{
+    min-height: 100%;
+    height: auto;
+}
+

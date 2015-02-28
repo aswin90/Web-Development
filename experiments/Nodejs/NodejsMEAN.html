@@ -1,0 +1,191 @@
+<html>
+	<head>
+		<title>NodejsMEAN</title>
+                <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+	</head>
+	<body>
+
+	<div class="container">
+
+	<h1>MEAN Stack using Nodejs</h1>
+
+	<br/>
+
+
+		<p>
+			In this experiment, I have explored the working on a MEAN stack using Nodejs.</p>
+		<p>
+			<a href="http://nodejs-aswin90.rhcloud.com/" target="_blank">You can find my experiment hosted on openshift here.</a></p>
+		<p>
+			I have worked on three components in this experiment.</p>
+		<p>
+			1. The HTML page- UI</p>
+		<p>
+			2. The Controller - a JS file which controls the UI&nbsp;</p>
+		<p>
+			3. The Server - a JS file which acts as a server</p>
+		<p>
+			&nbsp;</p>
+		<p>
+			The HTML page consists of the Angular Directives.</p>
+		<p>
+			The <strong>&lt;body&gt;</strong> is set as <strong>ng-app</strong>. The <strong>&lt;div&gt;</strong> contains the <strong>ng-controller</strong>. The <strong>&lt;tr&gt;</strong> contains the <strong>ng-repeat</strong> element.</p>
+		<p>
+			&nbsp;</p>
+		<p>
+			The controller on load fetches the records from the database collections. This command fetches all the records intially.</p>
+		<p>
+			<strong>$scope.all();</strong></p>
+		<p>
+			The&nbsp;$scope.all(); fetches the initial data in the database as follows:</p>
+		<div>
+			<strong>&nbsp;$scope.all = function () {</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; $http.get(&quot;/serviceClients&quot;)</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .success($scope.renderServiceClients);</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; }</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			This in turn calls:</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<div>
+				<strong>app.get(&quot;/serviceClients&quot;, function (req, res) {</strong></div>
+			<div>
+				&nbsp;</div>
+			<div>
+				<strong>&nbsp; &nbsp; db.users.find(function (err, docs) {</strong></div>
+			<div>
+				&nbsp;</div>
+			<div>
+				<strong>&nbsp; &nbsp; &nbsp; &nbsp; res.json(docs);</strong></div>
+			<div>
+				&nbsp;</div>
+			<div>
+				<strong>&nbsp; &nbsp; });</strong></div>
+			<div>
+				&nbsp;</div>
+			<div>
+				<strong>});</strong></div>
+			<div>
+				&nbsp;</div>
+			<div>
+				The server fetches the data from the database and returns the data in a json back to the controller which populates the data in the UI.</div>
+			<div>
+				&nbsp;</div>
+		</div>
+		<div>
+			When the user clicks on the Add button, create() is called.&nbsp;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<div>
+				<strong>&nbsp;$scope.create = function () {</strong></div>
+			<div>
+				<strong>&nbsp; &nbsp; &nbsp; &nbsp; $http.post(&quot;/serviceClients&quot;, $scope.serviceClient)</strong></div>
+			<div>
+				<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .success(function (response) {</strong></div>
+			<div>
+				<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $scope.all();</strong></div>
+			<div>
+				<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });</strong></div>
+			<div>
+				<strong>&nbsp; &nbsp; };</strong></div>
+			<div>
+				&nbsp;</div>
+			<div>
+				This in turn calls the server.</div>
+			<div>
+				&nbsp;</div>
+			<div>
+				<div>
+					<strong>app.post(&quot;/serviceClients&quot;, function (req, res) {</strong></div>
+				<div>
+					&nbsp;</div>
+				<div>
+					<strong>&nbsp; &nbsp; var svc = req.body;</strong></div>
+				<div>
+					&nbsp;</div>
+				<div>
+					<strong>&nbsp; &nbsp; db.users.insert(svc, function (err, doc) {</strong></div>
+				<div>
+					<strong>&nbsp; &nbsp; &nbsp; &nbsp; res.json(doc);</strong></div>
+				<div>
+					<strong>&nbsp; &nbsp; });</strong></div>
+				<div>
+					&nbsp;</div>
+				<div>
+					<strong>});</strong></div>
+				<div>
+					&nbsp;</div>
+				<div>
+					The server inserts the data into the database and on the success message, and the data is fetched from the database again.</div>
+				<div>
+					&nbsp;</div>
+				<div>
+					When user clicks on the delete, the&nbsp;remove(serviceClient._id) is called. The following is invoked from the controller. The ID of the record to be deleted is passed to the controller.&nbsp;</div>
+				<div>
+					&nbsp;</div>
+				<div>
+					<div>
+						<strong>&nbsp; $scope.remove = function (id) {</strong></div>
+					<div>
+						<strong>&nbsp; &nbsp; &nbsp; &nbsp; $http.delete(&quot;/serviceClients/&quot; + id)</strong></div>
+					<div>
+						<strong>&nbsp; &nbsp; &nbsp; &nbsp; .success(function (response) {</strong></div>
+					<div>
+						<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $scope.all();</strong></div>
+					<div>
+						<strong>&nbsp; &nbsp; &nbsp; &nbsp; });</strong></div>
+					<div>
+						<strong>&nbsp; &nbsp; }</strong></div>
+					<div>
+						&nbsp;</div>
+					<div>
+						This calls the server, where the following happens.</div>
+					<div>
+						&nbsp;</div>
+					<div>
+						<div>
+							<strong>app.delete(&quot;/serviceClients/:id&quot;, function (req, res) {</strong></div>
+						<div>
+							<strong>&nbsp; &nbsp; var id = req.params.id;</strong></div>
+						<div>
+							<strong>&nbsp; &nbsp; db.users.remove({_id : mongojs.ObjectId(id)},&nbsp;</strong></div>
+						<div>
+							<strong>&nbsp; &nbsp; &nbsp; &nbsp; function (err, doc) {</strong></div>
+						<div>
+							<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; res.json(doc);</strong></div>
+						<div>
+							<strong>&nbsp; &nbsp; &nbsp; &nbsp; })</strong></div>
+						<div>
+							<strong>});</strong></div>
+						<div>
+							&nbsp;</div>
+						<div>
+							This deletes the record from the collection in the database using the ID</div>
+					</div>
+				</div>
+				<div>
+					&nbsp;</div>
+				<div>
+					&nbsp;</div>
+			</div>
+		</div>
+        
+        <div>
+            <a href="https://github.com/aswin90/Web-Development/tree/master/NodeJS" target="_blank">Click here to view the source</a> 
+        </div>
+
+        <div>
+            &nbsp;
+        </div>
+
+        </div>
+
+	</body>
+</html>

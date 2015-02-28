@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Light Box Effect</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="lightBox.js" type="text/javascript"></script>
+    <link href="lightBox.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <h3>Light Box Experiment</h3>
+        <br />
+        <h4>Click on the image to view in light box mode</h4>
+        <br />
+        <h4>Click outside the image to return back to the page</h4>
+        <br />
+
+        <div>
+
+            <img src="amazon.jpg" class="thumbnail" width="120" onclick="lightbox('<img src=amazon.jpg width=100>');">
+            <img src="walmart.jpg" class="thumbnail" width="120" onclick="lightbox('<img src=walmart.jpg width=100>');">
+            <img src=" ebay.jpeg" class="thumbnail" width="120" onclick="lightbox('<img src=ebay.jpeg width=100>');">
+
+        </div>
+
+        <br />
+
+        <hr />
+
+        <p>
+            In this experiment, I tried creating a Light Box effect using CSS and jQuery.
+        </p>
+        <p>
+            The HTML page is a plain page consisting of the images to be displayed.
+        </p>
+        <div>
+            <strong>&lt;div&gt;</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src=&quot;amazon.jpg&quot; class=&quot;thumbnail&quot; width=&quot;120&quot; onclick=&quot;lightbox(&#39;&lt;img src=amazon.jpg width=100&gt;&#39;);&quot;&gt;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src=&quot;walmart.jpg&quot; class=&quot;thumbnail&quot; width=&quot;120&quot; onclick=&quot;lightbox(&#39;&lt;img src=walmart.jpg width=100&gt;&#39;);&quot;&gt;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src=&quot; ebay.jpeg&quot; class=&quot;thumbnail&quot; width=&quot;120&quot; onclick=&quot;lightbox(&#39;&lt;img src=ebay.jpeg width=100&gt;&#39;);&quot;&gt;</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&lt;/div&gt;</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            The CSS contains&nbsp;lightbox and&nbsp;lightbox-shadow which define the CSS for displaying the image in Light Box Effect.
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <div>
+                <strong>#lightbox {</strong>
+            </div>
+            <div>
+                <strong>position: absolute;</strong>
+            </div>
+            <div>
+                <strong>top: 0;</strong>
+            </div>
+            <div>
+                <strong>left: 50%;</strong>
+            </div>
+            <div>
+                <strong>width: 500px;</strong>
+            </div>
+            <div>
+                <strong>margin-left: -250px;</strong>
+            </div>
+            <div>
+                <strong>background: #fff;</strong>
+            </div>
+            <div>
+                <strong>z-index: 1001;</strong>
+            </div>
+            <div>
+                <strong>display: none;</strong>
+            </div>
+            <div>
+                <strong>}</strong>
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                <strong>#lightbox-shadow {</strong>
+            </div>
+            <div>
+                <strong>position: absolute;</strong>
+            </div>
+            <div>
+                <strong>top: 0;</strong>
+            </div>
+            <div>
+                <strong>left: 0;</strong>
+            </div>
+            <div>
+                <strong>width: 100%;</strong>
+            </div>
+            <div>
+                <strong>height: 100%;</strong>
+            </div>
+            <div>
+                <strong>background: #000;</strong>
+            </div>
+            <div>
+                <strong>filter: alpha(opacity=75);</strong>
+            </div>
+            <div>
+                <strong>opacity: 0.75;</strong>
+            </div>
+            <div>
+                <strong>z-index: 1000;</strong>
+            </div>
+            <div>
+                <strong>display: none;</strong>
+            </div>
+            <div>
+                <strong>}</strong>
+            </div>
+        </div>
+        <p>
+            <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/LightBox/lightBox.html" target="_blank">Click here to view the HTML file</a>
+        </p>
+        <p>
+            <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/LightBox/lightBox.css" target="_blank">Click here to view the CSS file</a>
+        </p>
+        <p>
+            References
+        </p>
+        <p>
+            W3 Schools -&nbsp;<a href="http://www.w3schools.com/" target="_blank">www.w3schools.com/</a>
+        </p>
+        <p>
+            CSS-Tricks -&nbsp;<a href="http://css-tricks.com/" target="_blank">http://css-tricks.com/</a>
+        </p>
+
+
+    </div> 
+</body>
+</html>

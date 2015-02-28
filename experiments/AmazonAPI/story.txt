@@ -1,0 +1,3 @@
+../../story/whatisnext.htm?../experiments/AmazonAPI/story.txt			What is Next?
+../AmazonAPI/AmazonSearch.aspx			  				Amazon Search
+../AmazonAPI/SearchItem.html			  				Amazon Search Item C#

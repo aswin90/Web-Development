@@ -1,0 +1,562 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Documentation</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+      $(function() {
+        $( "#accordion" ).accordion();
+      });
+    </script>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        #footer {
+            height: 60px;
+            background-color: #E8E3E3;
+            width: 89%;
+            margin-top: 3%;
+            margin-left: 6%;
+            margin-right: 5%;
+        }
+
+        .footer-text {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .body-height {
+            min-height: 100%;
+            height: auto;
+        }
+
+        body {
+            margin: 20px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container body-height">
+
+        <div class="header">
+            <div class="row">
+                <div class="col-md-5 pull-left"> <img src="images/proj_logo.jpg" height="64px" width="250px" /> </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-1 pull-right"> <a href="https://plus.google.com/u/0/101584820096948585279" target="_blank"><img src="images/gplus.png" /></a> </div>
+                <div class="col-md-1 pull-right"> <a href="https://twitter.com/pricecompare14" target="_blank"><img src="images/twitter.png" /></a> </div>
+                <div class="col-md-1 pull-right"> <a href="https://www.facebook.com/pages/Price-Compare/421135361367756" target="_blank"><img src="images/fb.png" /></a> </div>
+            </div>
+        </div>
+
+        <br />
+
+        <h2>Documentation</h2>
+
+        <br />
+
+        <div id="accordion">
+            <h3><b><i>Project Overview</i></b></h3>
+            <div>
+                <p>
+                    <strong>Price Compare</strong> is a website that helps users to search for item and compare the price of the item across three stores, viz. Amazon, eBay and Walmart.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    <strong>Design Features:</strong>
+                </p>
+                <p>
+                    The standards and practices followed while working on this project:
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fully Responsive - Can be viewed across mobile, tablet, and desktops.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Separate files for JavaScript and Style Sheets.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Proper error handling.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    <strong>Functional Features:</strong>
+                </p>
+                <p>
+                    The main features are:
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Price Compare helps users to search for item and compare the price of the item across three stores, viz. Amazon, eBay and Walmart.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; User can login using login credentials. After login, the user is redirected to the profile page.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Comparisons and products can be saved to the user profile.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When looking up for an item across the stores, the previous saved items on that store are displayed.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; By clicking on the comparisons or the product, the results of the comparisons or product can be obtained.&nbsp;
+                </p>
+            </div>
+            <h3><b><i>Acknowledgement</i></b></h3>
+            <div>
+                <p>
+                    CS5610 Web Development course - The very structure of the course motivates learning. The structure of doing experiments weekly gives freedom to explore unlearned areas and develop expertise in those areas. I would like to this opportunity to thank <strong>Prof. Jose Annunziato</strong> and <strong>Prof. Richard Rasala</strong> for designing the course in this fashion.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    I would also like to thank my TA, <strong>Jagruti Kapadia</strong> for her constructive and valuable weekly feedback which helped me realize the mistakes and correct them.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    I would like to thank <strong>Amazon</strong>, <strong>eBay</strong> and <strong>Walmart</strong> for providing APIs which helped me search for an item and compare the price of a product across these stores. The Documentation for the APIs was very helpful to understand the request format and the response structure.
+                </p>
+            </div>
+            <h3><b><i>Project Home Page</i></b></h3>
+            <div>
+                <p>
+                    The home page of the website consists the following features.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Site logo
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Social icons
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    The site logo and the social icons are used throughout the website.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    The home page also consists of
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jQuery Image Slider
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Username &amp; Password Text boxes
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Submit button
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    <strong>Features</strong>
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    Logo: I have designed this logo using Microsoft Powerpoint. The logo is simple and provides a great look for the website. The search symbol in the logo represents the user searching for the product on the website.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    Icons: On the top right corner, I have provided three icons one for Facebook, Twitter and Google Plus. The social media is a great medium for people review about the website, what feature they liked and their expectations.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    Navigation Bar - I have used the Bootstrap navigation bar to navigate across the website. The Navigation Bar provides a good look and feel to the website.
+                </p>
+            </div>
+
+            <h3><b><i>Profile</i></b></h3>
+            <div>
+                <p>
+                    The profile of the user is made of three components.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    The first part lists the Profile of the user:
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Username
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; First Name
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last Name
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Password
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    The second part lists the Saved Comparisons. The comparisons the user saves are displayed here. When one particular comparison is clicked upon, the results for that comparison are displayed.
+                </p>
+                <p>
+                    The third part lists the Saved Products at particular stores. Again, when a particular product at a store is clicked, the results for the particular product at that store are displayed.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    <strong><em>How does the page work?</em></strong>
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On page load, the username is obtained from the Session. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The [ProjectUserTable] is queried with this username and the data corresponding to the username is obtained from the table and is displayed in Profile.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The [ProjectComparisonTable] is queried with the username and the &#39;Saved Comparisons&#39; for the particular username are fetched and displayed in Saved Comparisons.
+                </p>
+                <p>
+                    The [ProjectProductSearch] is queried with the username and the &#39;Saved Products&#39; and &#39;Stores&#39; for the particular username are fetched and displayed in Saved Products.&nbsp;
+                </p>
+            </div>
+
+            <h3><b><i>Search for an item</i></b></h3>
+            <div>
+                <p>
+                    This page can be navigated to by clicking on the &#39;Search&#39; button in the Navigation Bar.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    The page carries the logo on the top left of the page and the social icons on the top right.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    The search operation is as follows:
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The user can enter the product that he/she wishes to search and click on the &#39;Search&#39; button.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On click, of the search button, the product is fetched from the Amazon database using the API call and is displayed.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The name of the products along with an image are displayed.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The user can select &#39;Compare prices&#39; for the exactly matching product.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    <strong><em>How does the page work?</em></strong>
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The user enters the product he/she wants to search for.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On click of &#39;Search&#39;, the AngularJS function is called
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The API page is called, which in turns calls the Amazon API
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The Amazon API returns XML data
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This data is passed back to the AngularJS function
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The XML data is converted to JSON
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This JSON data is iterated by AngularJS
+                </p>
+            </div>
+
+            <h3><b><i>Compare Prices</i></b></h3>
+            <div>
+                <p>
+                    When the user selects the product and clicks on &#39;Compare price&#39;, the user is redirected to the Price Comparison page.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    In this page, on the left, the image of the product the price of which is being compared is displayed.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    On the right, title of the product is displayed. Right below the product title, a table containing the following fields is displayed:
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name of the product.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The price of the product.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The logo of the store offering the product at the displayed price.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A link to fetch detailed info from the store.
+                </p>
+                <p>
+                    The user can save the product being compared to his/her profile by clicking on the &#39;Save Comparison&#39; button.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    <strong><em>How does the page work?</em></strong>
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The name of the product the user wants to do price comparison is passed to the page as a GET parameter.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This name is passed to the AngularJS function. The AngularJS function calls the API page.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The API page handles the Amazon, eBay and Walmart API calls
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The data is passed back to the AngularJS function.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The data from the API is handled using AngularJS and the required values are iterated.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When the user clicks on &#39;Detailed Info&#39;, the name of the product and the store from which the detailed info is requested is passed.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On click of &#39;Save Comparison&#39;, the name of the product is inserted into the [ProjectComparisonTable] table.
+                </p>
+            </div>
+
+            <h3><b><i>Detailed Info - Amazon / eBay / Walmart</i></b></h3>
+            <div>
+                <p>
+                    When the user selects the product at a particular store and clicks on &#39;Detailed Info&#39;, the user is redirected to the Detailed Info of the product at that particular store.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    In this page, detailed info of the product is fetched from the requested store and displayed to the user. Some of the field are:
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Features / Description
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Image
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Category
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Price
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; View on the item on respective store
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    The product can be saved to the user profile by clicking on &#39;Save Product&#39;. Also, previously saved products on that store are displayed in the page.
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    How does the page work?
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The name of the product the user requests a detailed info is passed to the respective page.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This name is passed to the AngularJS function. The AngularJS function calls the API page.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The API page handles the respective API calls
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The data is passed back to the AngularJS function.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The data from the API is handled using AngularJS and the required values are iterated.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; On click of &#39;Save Comparison&#39;, the name of the product and the store is inserted into the [ProjectComparisonTable] table.
+                </p>
+            </div>
+
+            <h3><b><i>Technologies / Browsers</i></b></h3>
+            <div>
+                <p>
+                    In this project, I have used the following technologies:
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ASP.NET and C#
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HTML5
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CSS3
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AngularJS
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; JavaScript
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jquery
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AJAX
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SQL
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XML
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; JSON
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    <strong><em>Browser Compatibility:</em></strong>
+                </p>
+                <p>
+                    The website renders perfectly on Google Chrome and Mozilla Firefox. But there might be some issues with the site rendered on Internet Explorer.
+                </p>
+            </div>
+
+            <h3><b><i>Future Scope</i></b></h3>
+            <div>
+                <p>
+                    During the course of working on this website, I have learnt many new technologies. I would like to add more to this project in the future. Some of the ideas that I have in my mind:
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add more comparison stores like Staples, Sears
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Observe, the user searches and try to come up with suggested items
+                </p>
+            </div>
+
+            <h3><b><i>References / Images</i></b></h3>
+            <div>
+                <p>
+                    <strong>Websites</strong>
+                </p>
+                <p>
+                    http://www.w3schools.com/
+                </p>
+                <p>
+                    https://angularjs.org/
+                </p>
+                <p>
+                    http://getbootstrap.com/
+                </p>
+                <p>
+                    http://stackoverflow.com/
+                </p>
+                <p>
+                    http://msdn.microsoft.com/en-us/default.aspx
+                </p>
+                <p>
+                    &nbsp;
+                </p>
+                <p>
+                    <strong>Images</strong>
+                </p>
+                <p>
+                    All the images obtained from Amazon, eBay and Walmart through the API calls, belong to the respective corporations.
+                </p>
+            </div>
+            <h3><b><i>Sample Use Case</i></b></h3>
+            <div>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Login to the application
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enter the item you want to search for - let us consider, &quot;I pad&quot;
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Now select the item you want to compare the prices for - let us consider, &quot;Apple iPad Mini MF432LL/A (16GB, Wi-Fi, Space Gray)&quot; and click &#39;Compare Prices&#39;
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next add the Apple iPad Mini MF432LL/A (16GB, Wi-Fi, Space Gray ) to the Saved Comparisons by clicking on &#39;Save Comparison&#39;.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Let us view this item on Amazon, for a detailed info. Click on the &#39;Detailed Info&#39; link.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The detailed info of the product from Amazon is displayed.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Save this product on Amazon store by clicking on &#39;Save Product&#39;.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next, go to the user profile, by selecting &#39;Profile&#39;.
+                </p>
+                <p>
+                    &middot;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The user profile is displayed, along with the Saved Comparisons and Saved Products
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+            <h6 class="text-center footer-text-left">&copy; Aswin Muthiah Murugapan, Northeastern University</h6>
+            <h6 class="text-center footer-text-right">Site best viewed in Google Chrome, Mozilla Firefox</h6>
+        </div>
+    </div>
+</body>
+</html>

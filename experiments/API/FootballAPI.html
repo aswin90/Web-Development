@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>EPL Standings</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body ng-app>
+    <div class="container" ng-controller="StandingsClientController">
+
+        <h1>English Premier League Standings</h1>
+
+        <a style="visibility: hidden" id="url" href="http://football-api.com/api/?Action=standings&APIKey=7f409880-6798-9985-f68535554d7f&comp_id=1204">
+            Get Standings
+        </a>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Team</th>
+                    <th>Points</th>
+                    <th>Recent Form</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="s in standings.teams">
+                    <td>{{s.stand_position}}</td>
+                    <td>{{s.stand_team_name}}</td>
+                    <td>{{s.stand_points}}</td>
+                    <td>{{s.stand_recent_form}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <script>
+        var url = "http://football-api.com/api/?Action=standings&APIKey=7f409880-6798-9985-f68535554d7f&comp_id=1204"
+        function StandingsClientController($scope, $http) {
+            
+               
+                $http.get(url).success(function (response) {                    
+                    console.log(response);
+                    $scope.standings = response;
+                });
+            
+        }
+    </script>
+
+    <hr/>
+
+    <p><b>Please use CORS extension in Google Chrome/Mozilla Firefox to view this!!</b></p>
+
+    <p>
+        <span style="font-family:arial,helvetica,sans-serif;">In this experiment, I have tried to work with the Football API to fetch the latest standings of the English Premier League Football.</span>
+    </p>
+    <p>
+        <span style="font-family:arial,helvetica,sans-serif;">I have used Football API and a call is made to the server on loading the page. The call is made to the API using the API key and the Competition ID (the value for the&nbsp;English Premier League Football is 1204, which is given by the Football API team).</span>
+    </p>
+    <p>
+        <span style="font-family:arial,helvetica,sans-serif;">A JSON is returned and this is populated in the browser using AngularJS.</span>
+    </p>
+    <p>
+        <span style="font-family:arial,helvetica,sans-serif;">The &lt;div&gt; contains&nbsp;<strong>ng-controller=&quot;StandingsClientController&quot;</strong></span>
+    </p>
+    <p>
+        <span style="font-family:arial,helvetica,sans-serif;">The Controller is set as follows in the script:</span>
+    </p>
+    <div>
+        <span style="font-family:arial,helvetica,sans-serif;"><strong>function StandingsClientController($scope, $http) {</strong></span>
+    </div>
+    <div>
+        <span style="font-family:arial,helvetica,sans-serif;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong></span>
+    </div>
+    <div>
+        <span style="font-family:arial,helvetica,sans-serif;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong></span>
+    </div>
+    <div>
+        <span style="font-family:arial,helvetica,sans-serif;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $http.get(url).success(function (response) { &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strong></span>
+    </div>
+    <div>
+        <span style="font-family:arial,helvetica,sans-serif;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; console.log(response);</strong></span>
+    </div>
+    <div>
+        <span style="font-family:arial,helvetica,sans-serif;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $scope.standings = response;</strong></span>
+    </div>
+    <div>
+        <span style="font-family:arial,helvetica,sans-serif;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });</strong></span>
+    </div>
+    <div>
+        <span style="font-family:arial,helvetica,sans-serif;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong></span>
+    </div>
+    <div>
+        <span style="font-family:arial,helvetica,sans-serif;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; }</strong></span>
+    </div>
+    <div>
+        &nbsp;
+    </div>
+    <div>
+        <span style="font-family:arial,helvetica,sans-serif;">ng-repeat is used in the &lt;tr&gt;. The value is displayed in the table &lt;tr&gt; as follows:</span>
+    </div>
+    <div>
+        &nbsp;
+    </div>
+    <div>
+        <div>
+            <span style="font-family:arial,helvetica,sans-serif;"><strong>&lt;tr ng-repeat=&quot;s in standings.teams&quot;&gt;</strong></span>
+        </div>
+        <div>
+            <span style="font-family:arial,helvetica,sans-serif;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;{{s.stand_position}}&lt;/td&gt;</strong></span>
+        </div>
+        <div>
+            <span style="font-family:arial,helvetica,sans-serif;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;{{s.stand_team_name}}&lt;/td&gt;</strong></span>
+        </div>
+        <div>
+            <span style="font-family:arial,helvetica,sans-serif;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;{{s.stand_points}}&lt;/td&gt;</strong></span>
+        </div>
+        <div>
+            <span style="font-family:arial,helvetica,sans-serif;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;{{s.stand_recent_form}}&lt;/td&gt;</strong></span>
+        </div>
+        <div>
+            <span style="font-family:arial,helvetica,sans-serif;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/tr&gt;</strong></span>
+        </div>
+    </div>
+    <br/>
+    <p>
+        <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/API/FootballAPI.html" target="_blank"><span style="font-family:arial,helvetica,sans-serif;">Click here to see the source</span></a>
+    </p>
+
+
+</body>
+</html>

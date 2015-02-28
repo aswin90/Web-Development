@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Walmart API</title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="resources/walmart.js"></script>
+</head>
+<body ng-app="">
+    <div class="container" ng-controller="ItemSearchController">
+
+        <h1>Search in Walmart</h1>
+
+        <hr />
+
+        <input ng-model="item" class="form-control" placeholder="Enter the item" />
+        <button ng-click="getItem()" class="btn btn-primary btn-block">Get search results</button>
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Item ID</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Price-USD</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="i in items">
+                    <td>{{i.itemId}}</td>
+                    <td>{{i.name}}</td>
+                    <td><img ng-src="{{i.thumbnailImage}}" /></td>
+                    <td>{{i.salePrice}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr />
+
+        <p>
+            In this experiment, I have explored performing a search operation in the Walmart database using the Walmart API.
+        </p>
+        <p>
+            In the UI part, I have used AngularJS to populate the search results. The&nbsp;<strong>ng-app&nbsp;</strong>is specified in the &lt;body&gt;.
+        </p>
+        <p>
+            The &lt;div&gt; contains the&nbsp;<strong>ng-controller=&quot;ItemSearchController&quot;</strong>
+        </p>
+        <p>
+            The input field is as follows:
+        </p>
+        <p>
+            &nbsp;&lt;input ng-model=&quot;item&quot; class=&quot;form-control&quot; placeholder=&quot;Enter the item&quot; /&gt;
+        </p>
+        <p>
+            On click of&nbsp;<strong>Get search results&nbsp;</strong>button, the&nbsp;<strong>getItem()</strong> is called.
+        </p>
+        <p>
+            The <strong>getItem()</strong> in the controller is as follows:
+        </p>
+        <div>
+            <strong>&nbsp; &nbsp; $scope.getItem = function () {</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; var item = $scope.item;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; console.log([item]);</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; var URL = url.replace(&quot;abc&quot;, item);</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; console.log(URL);</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; $http.get(URL).success(function (response) {</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $scope.items = response.items;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; console.log($scope.items);</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; });</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; }</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            This calls the API URL -&nbsp;<strong>http://api.walmartlabs.com/v1/search?apiKey=spw36je9q66fe886224gu5te&amp;query=abc</strong> where the search query is set and the data is fetched.
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            The data returned from the database is iterated in the UI. The&nbsp;<strong>ng-repeat</strong> is set in the &lt;tr&gt;.
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/API/WalmartAPI.html" target="_blank">Click here to see the source code</a>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/API/resources/walmart.js" target="_blank">Click here to see the JavaScript source code</a>
+        </div>
+        <div>
+	    <br />
+            <b>Reference:</b>
+            <br/>
+            <a href="https://developer.walmartlabs.com/" target="_blank">Walmart Developer Page</a>
+            <br />
+            <a href="https://developer.walmartlabs.com/docs" target="_blank">Walmart Developer Documentation</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

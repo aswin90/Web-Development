@@ -1,0 +1,3 @@
+../../story/whatisnext.htm?../experiments/LightBox/story.txt			What is Next?
+../LightBox/lightBox.html			  									Light Box Effect
+../LightBox/lightBoxJS.html			  									Light Box Effect jQuery

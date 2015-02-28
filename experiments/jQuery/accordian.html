@@ -1,0 +1,127 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI Accordion</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        $(function () {
+            $("#accordion").accordion({
+                collapsible: true
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <br/>
+        <h2>Brief history about some E-Commerce websites</h2>
+        <br/>
+        <div id="accordion">
+            <h3>Amazon</h3>
+            <div>
+                <p>Amazon.com, Inc. is an American electronic commerce company with headquarters in Seattle, Washington. It is the largest Internet-based company in the United States.[11][12] Amazon.com started as an online bookstore, but soon diversified, selling DVDs, VHSs, CDs, video and MP3 downloads/streaming, software, video games, electronics, apparel, furniture, food, toys, and jewelry. The company also produces consumer electronics—notably, Amazon Kindle e-book readers, Kindle Fire tablets, Fire TV and Fire Phone — and is a major provider of cloud computing services.</p>
+            </div>
+            <h3>Walmart</h3>
+            <div>
+                <p>Wal-Mart Stores, Inc., is an American multinational retail corporation that operates chains of large discount department stores and warehouse stores. Headquartered in Bentonville, Arkansas, the company was founded by Sam Walton in 1962 and incorporated on October 31, 1969. It has over 11,000 stores in 27 countries, under a total 71 different banners.[7] The company operates under the Walmart name in the US and Puerto Rico. It operates in Mexico as Walmart de México y Centroamérica, in the United Kingdom as Asda, in Japan as Seiyu, and in India as Best Price. It has wholly owned operations in Argentina, Brazil, and Canada.</p>
+            </div>
+            <h3>eBay</h3>
+            <div>
+                <p>eBay Inc., is an American multinational corporation and e-commerce company, providing consumer-to-consumer & business-to-consumer sales services via Internet. It is headquartered in San Jose, California, United States. eBay was founded by Pierre Omidyar in 1995, and became a notable success story of the dot-com bubble; it is a multi-billion dollar business with operations localized in over thirty countries.</p>
+            </div>
+        </div>
+
+        <br />
+        <hr />
+
+        <p>
+            In this experiment, I have explored jQuery Accordion&nbsp;feature.
+        </p>
+        <p>
+            I&#39;ve added the jQuery and jQueryUI. Also, I have added Bootstrap to style the page.
+        </p>
+        <div>
+            <strong>&lt;script src=&quot;//code.jquery.com/jquery-1.10.2.js&quot;&gt;&lt;/script&gt;</strong>
+        </div>
+        <div>
+            <strong>&lt;script src=&quot;//code.jquery.com/ui/1.11.2/jquery-ui.js&quot;&gt;&lt;/script&gt;</strong>
+        </div>
+        <div>
+            <strong>&lt;link href=&quot;//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            A &lt;div&gt; with the id &#39;accordion&#39; is created. Inside this &lt;div&gt;, I have created three &lt;div&gt; tags for each of the content to be displayed in the&nbsp;accordion.
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&lt;div id=&quot;accordion&quot;&gt;</strong>
+        </div>
+        <div>
+            <strong>&lt;/div&gt;</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            This id is grabbed by the jQuery function and applied the accordian style. Also, the collapsible is set to true to enable accordian collapse.
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <div>
+                <strong>&lt;script&gt;</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; $(function () {</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $(&quot;#accordion&quot;).accordion({</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; collapsible: true</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; &nbsp; &nbsp; });</strong>
+            </div>
+            <div>
+                <strong>&lt;/script&gt;</strong>
+            </div>
+            <div>
+                &nbsp;
+            </div>
+        </div>
+        <div>
+            <div>
+                <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/jQuery/accordian.html" target="_blank">Click here to see the source</a>
+            </div>
+        </div>
+        <p>
+            &nbsp;
+        </p>
+        <p>
+            References:
+        </p>
+        <p>
+            W3 Schools -&nbsp;<a href="http://www.w3schools.com/" target="_blank">http://www.w3schools.com/</a>
+        </p>
+        <p>
+            jQuery -&nbsp;<a href="http://jquery.com/" target="_blank">http://jquery.com/</a>
+        </p>
+
+    </div>
+
+</body>
+</html>

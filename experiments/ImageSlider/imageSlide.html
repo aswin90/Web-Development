@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="imageSlide.js" type="text/javascript"></script>
+    <link href="imageSlide.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container glyphicon-align-center">
+
+        <h2>Image slider effect</h2>
+
+        <div id="slideshow">
+            <div id="slideshowWindow">
+
+                <div class="slide">
+                    <img src="amazon.jpg" class="image" />
+                </div>
+
+                <div class="slide">
+                    <img src="walmart.jpg" class="image" />
+                </div>
+
+                <div class="slide">
+                    <img src="ebay.jpeg" class="image" />
+                </div>
+
+            </div>
+        </div>
+
+        <hr />
+        <br />
+
+        <p>
+            In this experiment, I have used jQuery and CSS to create an image sliding effect.
+        </p>
+        <p>
+            The HTML contains the images enclosed in &lt;div&gt;.&nbsp;
+        </p>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &lt;div id=&quot;slideshow&quot;&gt;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div id=&quot;slideshowWindow&quot;&gt;</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;slide&quot;&gt;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src=&quot;amazon.jpg&quot; class=&quot;image&quot; /&gt;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;slide&quot;&gt;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src=&quot;walmart.jpg&quot; class=&quot;image&quot; /&gt;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;slide&quot;&gt;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src=&quot;ebay.jpeg&quot; class=&quot;image&quot; /&gt;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            Next, in the CSS, we can set width and height of the images in the &lt;div&gt;.In the outer &lt;div&gt; the <strong>overflow: hidden</strong> is set to create the sliding effect. In the inner &lt;div&gt;, the <strong>float </strong>is set to <strong>left</strong>. Also, the <strong>max-height</strong> and the <strong>max-width</strong> of the image are set to <strong>100%</strong> to fit the image within the &lt;div&gt;.
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <div>
+                <strong>#slideshow #slideshowWindow {</strong>
+            </div>
+            <div>
+                <strong>width:500px;</strong>
+            </div>
+            <div>
+                <strong>height:257px;</strong>
+            </div>
+            <div>
+                <strong>margin:0;</strong>
+            </div>
+            <div>
+                <strong>padding:0;</strong>
+            </div>
+            <div>
+                <strong>position:relative;</strong>
+            </div>
+            <div>
+                <strong>overflow:hidden;</strong>
+            </div>
+            <div>
+                <strong>}</strong>
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                <strong>#slideshow #slideshowWindow .slide {</strong>
+            </div>
+            <div>
+                <strong>margin:0;</strong>
+            </div>
+            <div>
+                <strong>padding:0;</strong>
+            </div>
+            <div>
+                <strong>width:500px;&nbsp;</strong>
+            </div>
+            <div>
+                <strong>height:257px;</strong>
+            </div>
+            <div>
+                <strong>float:left;</strong>
+            </div>
+            <div>
+                <strong>position:relative;</strong>
+            </div>
+            <div>
+                <strong>}</strong>
+            </div>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <div>
+                <strong>.image{</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; max-width:100%;</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; max-height:100%;</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; margin: auto;</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; position: absolute;</strong>
+            </div>
+            <div>
+                <strong>&nbsp; &nbsp; top: 0; left: 0; bottom: 0; right: 0;</strong>
+            </div>
+            <div>
+                <strong>}</strong>
+            </div>
+        </div>
+        <p>
+            <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/ImageSlider/imageSlide.html" target="_blank">Click here to view the HTML file</a>
+        </p>
+        <p>
+            <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/ImageSlider/imageSlide.css" target="_blank">Click here to view the CSS file</a>
+        </p>
+        <p>
+            References:
+        </p>
+        <p>
+            W3 Schools -&nbsp;<a href="http://www.w3schools.com/" target="_blank">http://www.w3schools.com/</a>
+        </p>
+        <p>
+            CSS Tricks -&nbsp;<a href="http://css-tricks.com/" target="_blank">http://css-tricks.com/</a>
+        </p>
+
+    </div>
+</body>
+</html>

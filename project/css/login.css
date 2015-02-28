@@ -1,0 +1,59 @@
+﻿html {
+    position: relative;
+    min-height: 100%;
+}
+
+#footer {
+    height: 60px;
+    background-color: #E8E3E3;
+    width:89%;
+    margin-top: 2%;
+    margin-left: 6%;
+    margin-right: 5%;
+}
+
+.footer-text{
+    padding-top: 10px; 
+    padding-bottom: 10px;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+#slideshow #slideshowWindow {
+    width:500px;
+    height:257px;
+    margin:0;
+    padding:0;
+    position:relative;
+    overflow:hidden;
+}
+
+#slideshow #slideshowWindow .slide {
+    margin:0;
+    padding:0;
+    width:500px; 
+    height:257px;
+    float:left;
+    position:relative;
+}
+
+.image{
+    max-width:100%;
+    max-height:100%;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.borderless tbody tr td, .borderless thead tr th {
+    border: none;
+}
+
+.msg-box
+{
+    color: red;
+}
+

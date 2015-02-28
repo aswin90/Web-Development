@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Responsive Web Design</title>
+    <style>
+
+        /*  SECTIONS  */
+        .section {
+	        clear: both;
+	        padding: 0px;
+	        margin: 0px;
+        }
+
+        /*  COLUMN SETUP  */
+        .col {
+	        display: block;
+	        float:left;
+	        margin: 1% 0 1% 1.6%;
+        }
+        .col:first-child { margin-left: 0; }
+
+        /*  GRID OF THREE  */
+        .span_3_of_3 {
+	        width: 100%;
+        }
+        .span_2_of_3 {
+	        width: 66.1%;
+        }
+        .span_1_of_3 {
+	        width: 32.2%;
+        }
+
+        /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+        @media only screen and (max-width: 480px) {
+	        .col { 
+		        margin: 1% 0 1% 0%;
+	        }
+        }
+
+        @media only screen and (max-width: 480px) {
+	        .span_3_of_3 {
+		        width: 100%; 
+	        }
+	        .span_2_of_3 {
+		        width: 100%; 
+	        }
+	        .span_1_of_3 {
+		        width: 100%;
+	        }
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Reponsive Web Design</h1>
+
+    <div class="section" style="text-align: justify;">
+        <div class="col span_1_of_3">
+            Chelsea Football Club are an English football club based in Fulham, London. 
+            Founded in 1905, the club play in the Premier League and have spent most of their history in the top tier of English football. 
+            The club's home ground is the 41,837-seat Stamford Bridge stadium, where they have played since their establishment.
+        </div>
+        <div class="col span_1_of_3">
+            Chelsea had their first major success in 1955, winning the league championship, and won various cup competitions during the 1960s, 1970s, 1990s and 2000s. 
+            The club have enjoyed their greatest period of success in the past two decades, winning 15 major trophies since 1997. 
+            Domestically, Chelsea have won four league titles, seven FA Cups, four League Cups and four FA Community Shields, while in continental competitions they have won two UEFA Cup Winners' Cups, one UEFA Super Cup, one UEFA Europa League and one UEFA Champions League. 
+            Chelsea are the only London club to win the UEFA Champions League, and one of four clubs, and the only British club, to have won all three main UEFA club competitions.
+        </div>
+        <div class="col span_1_of_3">
+            Chelsea's regular kit colours are royal blue shirts and shorts with white socks. 
+            The club's crest has been changed several times in attempts to re-brand the club and modernise its image. 
+            The current crest, featuring a ceremonial lion rampant regardant holding a staff, is a modification of the one introduced in the early 1950s. 
+            The club have sustained the fifth highest average all-time attendance in English football. 
+            Their average home gate for the 2012–13 season was 41,462, the sixth highest in the Premier League. 
+            Since July 2003, Chelsea have been owned by Russian billionaire Roman Abramovich. 
+            In April 2013 they were ranked by Forbes Magazine as the seventh most valuable football club in the world, at £588 million ($901 million), an increase of 18% from the previous year.
+        </div>
+    </div>
+
+    <br />
+    <hr />
+
+	<div>
+			In this experiment, I have explored Responsive Design and tried to optimize the viewing experience across a wide range of devices.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			Here I&#39;ve set up three columns. Each column is placed under a &lt;div&gt; tag.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>&lt;div class=&quot;section group&quot;&gt;</strong></div>
+		<div>
+			<strong>&lt;div class=&quot;col span_1_of_3&quot;&gt;</strong></div>
+		<div>
+			<strong>This is column 1</strong></div>
+		<div>
+			<strong>&lt;/div&gt;</strong></div>
+		<div>
+			<strong>&lt;div class=&quot;col span_1_of_3&quot;&gt;</strong></div>
+		<div>
+			<strong>This is column 2</strong></div>
+		<div>
+			<strong>&lt;/div&gt;</strong></div>
+		<div>
+			<strong>&lt;div class=&quot;col span_1_of_3&quot;&gt;</strong></div>
+		<div>
+			<strong>This is column 3</strong></div>
+		<div>
+			<strong>&lt;/div&gt;</strong></div>
+		<div>
+			<strong>&lt;/div&gt;</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			Next, I&#39;ve set the section padding and the margin of the section div to 0px.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>.section {</strong></div>
+		<div>
+			<strong>clear: both;</strong></div>
+		<div>
+			<strong>padding: 0px;</strong></div>
+		<div>
+			<strong>margin: 0px;</strong></div>
+		<div>
+			<strong>}</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			The column are set to float on the left and the margin are set.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>.col {</strong></div>
+		<div>
+			<strong>display: block;</strong></div>
+		<div>
+			<strong>float:left;</strong></div>
+		<div>
+			<strong>margin: 1% 0 1% 1.6%;</strong></div>
+		<div>
+			<strong>}</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			The left margin of the first column has been set to 0.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>.col:first-child { margin-left: 0; }</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			To make the page responsive, the width of the columns are set as follows:</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>.span_3_of_3 {</strong></div>
+		<div>
+			<strong>width: 100%;</strong></div>
+		<div>
+			<strong>}</strong></div>
+		<div>
+			<strong>.span_2_of_3 {</strong></div>
+		<div>
+			<strong>width: 66.1%;</strong></div>
+		<div>
+			<strong>}</strong></div>
+		<div>
+			<strong>.span_1_of_3 {</strong></div>
+		<div>
+			<strong>width: 32.2%;</strong></div>
+		<div>
+			<strong>}</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			For screen resolution less than 480 px, the width is set to 100% and the top and bottom margin is set to 1%</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>@media only screen and (max-width: 480px) {</strong></div>
+		<div>
+			<strong>.col {&nbsp;</strong></div>
+		<div>
+			<strong>margin: 1% 0 1% 0%;</strong></div>
+		<div>
+			<strong>}</strong></div>
+		<div>
+			<strong>}</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>@media only screen and (max-width: 480px) {</strong></div>
+		<div>
+			.<strong>span_3_of_3 {</strong></div>
+		<div>
+			<strong>width: 100%;&nbsp;</strong></div>
+		<div>
+			<strong>}</strong></div>
+		<div>
+			<strong>.span_2_of_3 {</strong></div>
+		<div>
+			<strong>width: 100%;&nbsp;</strong></div>
+		<div>
+			<strong>}</strong></div>
+		<div>
+			<strong>.span_1_of_3 {</strong></div>
+		<div>
+			<strong>width: 100%;</strong></div>
+		<div>
+			<strong>}</strong></div>
+		<div>
+			<strong>}</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/ResponsiveDesign/ResponsiveWebDesign.html" target="_blank">Click here to see 	the source code</a></div>
+
+</body>
+</html>

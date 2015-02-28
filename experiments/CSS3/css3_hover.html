@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CSS</title>
+    <style>
+
+        .ul-design {
+            margin: 50px 0 0 0;
+            padding: 0;
+            list-style: none;
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
+ 
+        .ul-design li {
+            width: 400px;
+            height: 400px;
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .div-item {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            cursor: default;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .div-img { 
+            background-image: url(../../images/chelsea.png);
+        }
+
+        .div-info {
+            position: absolute;
+            background: rgba(63,147,147, 0.8);
+            width: inherit;
+            height: inherit;
+            border-radius: 50%;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+            transform: scale(0);
+        }
+
+        .div-info h3 {
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 22px;
+            margin: 0 30px;
+            padding: 45px 0 0 0;
+            height: 140px;
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+
+        .div-item:hover .div-info {
+            transform: scale(0.95);
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <center><h2>CSS Image Hover Effects</h2></center>
+    <ul class="ul-design">
+        <li>
+            <div class="div-item div-img">
+                <div class="div-info">
+                    <h3>Chelsea FC</h3> <br />
+                    <h3>Home Ground : Stamford Bridge</h3>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+<br />
+<hr />
+<p>
+			In this experiment, I&#39;ve tried using CSS3 to create an image hover effect.</p>
+		<p>
+			The ul-design class is used to set the margins, the initial image height and width. This is can be noticed in the classes .ul-design and .ul-design li. The top margin is set to 50 px while the rest of the margins are set to 0px. The image is aligned to the center and displayed as a block. The width and the height of the image are set to 400 px.</p>
+		<p>
+			The code snippet for this is as follows.</p>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; .ul-design {</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin: 50px 0 0 0;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 0;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; list-style: none;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: block;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-align: center;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 100%;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; }</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; .ul-design li {</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: 400px;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 400px;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; display: inline-block;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin: 20px;</div>
+		<div>
+			&nbsp; &nbsp; &nbsp; &nbsp; }</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			The &#39;transform&#39; in the .div-item: hover and .div-info bring in the transformation effect upon hover. The Scale is used to control the radius of the transformation and the opacity determines the opacity factor of the transformation.</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			The code snippet for this is:</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<div>
+				&nbsp; &nbsp; &nbsp; &nbsp; .div-item:hover .div-info {</div>
+			<div>
+				&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: scale(0.95);</div>
+			<div>
+				&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 1;</div>
+			<div>
+				&nbsp; &nbsp; &nbsp; &nbsp; }</div>
+			<div>
+				&nbsp;</div>
+			<div>
+				Upon hover, during the transformation, the .div-info and .div-info h3 provide the styles for the background color and the text displayed during transformation. The transition in .div-info specifies the time for the ease-in-out (for the previous image). I&#39;ve set the value of this .div-info 0.4s.</div>
+			<div>
+				&nbsp;</div>
+			<div>
+				The code snippet for this is:</div>
+			<div>
+				&nbsp;</div>
+			<div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; .div-info {</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; position: absolute;</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; background: rgba(63,147,147, 0.8);</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; width: inherit;</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: inherit;</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; border-radius: 50%;</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; overflow: hidden;</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; opacity: 0;</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transition: all 0.4s ease-in-out;</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; transform: scale(0);</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; }</div>
+				<div>
+					&nbsp;</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; .div-info h3 {</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; color: #fff;</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; text-transform: uppercase;</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; letter-spacing: 2px;</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-size: 22px;</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; margin: 0 30px;</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; padding: 45px 0 0 0;</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; height: 140px;</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; font-family: &#39;Open Sans&#39;, Arial, sans-serif;</div>
+				<div>
+					&nbsp; &nbsp; &nbsp; &nbsp; }</div>
+				<div>
+					&nbsp;</div>
+				<div>
+					<a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/CSS3/css3_hover.html" target="_blank">Click here to see the source</a></div>
+				<div>
+					&nbsp;</div>
+				<div>
+					Reference:</div>
+				<div>
+					&nbsp;</div>
+				<div>
+					<a href="http://www.w3schools.com/" target="_blank">W3Schools</a></div>
+				<div>
+					&nbsp;</div>
+				<div>
+					<a href="http://css-tricks.com/almanac/properties/t/transition/" target="_blank">CSS Tricks</a></div>
+				<div>
+					&nbsp;</div>
+			</div>
+		</div>
+		<p>
+			&nbsp;</p>
+</body>
+</html>

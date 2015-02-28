@@ -1,0 +1,126 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>UI Datepicker</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        $(function () {
+            $("#datepicker").datepicker({
+                altField: "#alternate",
+                altFormat: "DD, d MM, yy"
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Date Picker Experiment</h2>
+        <br />
+        <div class="datePickExp">
+            Enter your date of birth:
+            <input type="text" id="datepicker">&nbsp;<input type="text" id="alternate" size="27" readonly>
+        </div>
+
+        <br />
+        <hr />
+
+        <p>
+            In this experiment, I have explored jQuery Datepicker feature.
+        </p>
+        <p>
+            I&#39;ve added the jQuery and jQueryUI. Also, I have added Bootstrap to style the page.
+        </p>
+        <div>
+            <strong>&lt;script src=&quot;//code.jquery.com/jquery-1.10.2.js&quot;&gt;&lt;/script&gt;</strong>
+        </div>
+        <div>
+            <strong>&lt;script src=&quot;//code.jquery.com/ui/1.11.2/jquery-ui.js&quot;&gt;&lt;/script&gt;</strong>
+        </div>
+        <div>
+            <strong>&lt;link href=&quot;//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            I have created a input text box with the id &#39;datepciker&#39;. Also, I have another read-only field, where the selected date is displayed in the long format.
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&lt;input type=&quot;text&quot; id=&quot;datepicker&quot;&gt;&amp;nbsp;&lt;input type=&quot;text&quot; id=&quot;alternate&quot; size=&quot;27&quot; readonly&gt;</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            When the text box is clicked, the jQuery function is called. The script is as follows:
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <div>
+                <div>
+                    <strong>&lt;script&gt;</strong>
+                </div>
+                <div>
+                    <strong>&nbsp; &nbsp; &nbsp; &nbsp; $(function () {</strong>
+                </div>
+                <div>
+                    <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $(&quot;#datepicker&quot;).datepicker({</strong>
+                </div>
+                <div>
+                    <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; altField: &quot;#alternate&quot;,</strong>
+                </div>
+                <div>
+                    <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; altFormat: &quot;DD, d MM, yy&quot;</strong>
+                </div>
+                <div>
+                    <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });</strong>
+                </div>
+                <div>
+                    <strong>&nbsp; &nbsp; &nbsp; &nbsp; });</strong>
+                </div>
+                <div>
+                    <strong>&lt;/script&gt;</strong>
+                </div>
+                <div>
+                    &nbsp;
+                </div>
+                <div>
+                    &nbsp;
+                </div>
+            </div>
+            <div>
+                The datepicker is applied to the text box and a jQuery datepicker is displayed for the user to input the date. The selected date is also displayed in a long format in the nearby read-only box.
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/jQuery/datePicker.html" target="_blank">Click here to see the source</a>
+            </div>
+        </div>
+        <p>
+            &nbsp;
+        </p>
+        <p>
+            References:
+        </p>
+        <p>
+            W3 Schools -&nbsp;<a href="http://www.w3schools.com/" target="_blank">http://www.w3schools.com/</a>
+        </p>
+        <p>
+            jQuery -&nbsp;<a href="http://jquery.com/" target="_blank">http://jquery.com/</a>
+        </p>
+
+    </div>
+
+</body>
+</html>

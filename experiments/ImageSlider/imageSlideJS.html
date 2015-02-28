@@ -1,0 +1,170 @@
+﻿<html>
+<head>
+    <title>Image Slider JS</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <br />
+        <br />
+
+        <p>
+            The sliding effect is acheived using the jQuery as follows:
+        </p>
+        <div>
+            <strong>$(document).ready(function () {</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; var currentPosition = 0;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; var slideWidth = 500;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; var slides = $(&#39;.slide&#39;);</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; var numberOfSlides = slides.length;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; var slideShowInterval;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; var speed = 3000;</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; slideShowInterval = setInterval(changePosition, speed);</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; slides.wrapAll(&#39;&lt;div id=&quot;slidesHolder&quot;&gt;&lt;/div&gt;&#39;)</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; slides.css({ &#39;float&#39;: &#39;left&#39; });</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; $(&#39;#slidesHolder&#39;).css(&#39;width&#39;, slideWidth * numberOfSlides);</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; function changePosition() {</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; if (currentPosition == numberOfSlides - 1) {</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; currentPosition = 0;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; } else {</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; currentPosition++;</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; }</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; moveSlide();</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; }</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; function moveSlide() {</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; $(&#39;#slidesHolder&#39;)</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .animate({ &#39;marginLeft&#39;: slideWidth * (-currentPosition) });</strong>
+        </div>
+        <div>
+            <strong>&nbsp; &nbsp; }</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <strong>});</strong>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            The count of the slides is obtained and is set in the numberOfSlides. Also the speed at which the transition has to take place is set to 3000 milli seconds.&nbsp;
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            The slides are wrapped and the float is set to left. The slide holder width is set to&nbsp;slideWidth times the numberOfSlides.
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            Now, slideShowInterval calls&nbsp;setInterval to which&nbsp;changePosition and speed are passed. In&nbsp;changePosition, the scenario to handle end of the slideshow is handled. If the end is not reached, then the&nbsp;currentPosition is incremented and&nbsp;moveSlide function is called.
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            In&nbsp;moveSlide, the left margin is set to the width if the slide multiplied by the slide number. This handles the animation part.
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/ImageSlider/imageSlide.js" target="_blank">Click here to view the JS file</a>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            References
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            W3Schools -&nbsp;<a href="http://www.w3schools.com/" target="_blank">http://www.w3schools.com/</a>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            CSS-Tricks -&nbsp;<a href="http://css-tricks.com/" target="_blank">http://css-tricks.com/</a>
+        </div>
+    </div>
+</body>
+</html>

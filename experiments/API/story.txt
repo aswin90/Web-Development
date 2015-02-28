@@ -1,0 +1,5 @@
+../../story/whatisnext.htm?../experiments/API/story.txt		What is Next?
+../API/GoogleMapsAPI.html			  		User Location using Google API
+../API/FootballAPI.html                                         English Premier League Standings using Football API
+../API/WalmartAPI.html                                          Search Items using Walmart API
+../API/ebayAPI.html                                             Search Items using ebay API

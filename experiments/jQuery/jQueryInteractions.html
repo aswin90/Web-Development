@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jQuery Interactions</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+
+        body{
+            margin: 25px 70px;
+        }
+
+        #draggable {width: 150px; height: 150px; padding: 0.5em}
+        #draggable {background-color:blue; text-align: center;}
+
+        #resizable { width: 150px; height: 100px; padding: 0.5em; }
+        #resizable h3 { text-align: center; margin: 0; }
+
+        #selectable .ui-selecting { background: #D0CDE6; }
+        #selectable .ui-selected { background: #9992DA; color: white; }
+        #selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+        #selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+
+        #draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+        #droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
+
+        #sortable { list-style-type: none; margin: 0; padding: 0; width: 450px; }
+        #sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
+
+    </style>
+    <script>
+        $(function () {
+            $("#draggable").draggable();
+
+            $("#resizable").resizable();
+
+            $("#selectable").selectable();
+            
+            $("#sortable").sortable();
+            $("#sortable").disableSelection();
+
+        });
+    </script>
+</head>
+<body>
+    <h1>jQuery Interactions</h1>
+    <br />
+    
+    <div id="div1" style="height: 250px;">
+        <h2>Draggable</h2>
+        <div id="draggable">
+            <p>Try dragging me!!</p>
+        </div>
+    </div>
+    
+    <div id="div2" style="height: 250px;">
+        <h2>Resizable</h2>
+        <div id="resizable" class="ui-widget-content">
+            <h3 class="ui-widget-header">Resizable</h3>
+        </div>
+        <br />
+    </div>
+
+   
+    <div id="div2" style="height: 325px;">
+        <h2>Selectable</h2>
+        <div id="selectableDiv">
+            <ol id="selectable">
+                <li class="ui-widget-content">Chelsea</li>
+                <li class="ui-widget-content">Southampton</li>
+                <li class="ui-widget-content">Aston Villa</li>
+                <li class="ui-widget-content">Arsenal</li>
+                <li class="ui-widget-content">Swansea City</li>
+            </ol>
+        </div>
+        <br />
+    </div>
+
+    <div id="div2" style="height: 450px;">
+        <h2>Sortable</h2>
+        <div>
+            <ul id="sortable">
+                <li class="ui-state-default">1</li>
+                <li class="ui-state-default">2</li>
+                <li class="ui-state-default">3</li>
+                <li class="ui-state-default">4</li>
+                <li class="ui-state-default">5</li>
+                <li class="ui-state-default">6</li>
+                <li class="ui-state-default">7</li>
+                <li class="ui-state-default">8</li>
+                <li class="ui-state-default">9</li>
+                <li class="ui-state-default">10</li>
+                <li class="ui-state-default">11</li>
+                <li class="ui-state-default">12</li>
+            </ul>
+        </div>
+    </div>
+
+<hr />
+
+<p>
+			This experiment helped me learn the various interactions possible&nbsp;using jQuery.</p>
+		<p>
+			I&#39;ve done four interactions, viz:</p>
+		<p>
+			1. Draggable</p>
+		<p>
+			2. Resizable</p>
+		<p>
+			3. Selectable</p>
+		<p>
+			4. Sortable</p>
+		<p>
+			Let&#39;s take one each and look in detail:</p>
+		<p>
+			<strong>Draggable</strong></p>
+		<p>
+			The &lt;div&gt; element is as follows:</p>
+		<div>
+			<strong>&lt;div id=&quot;draggable&quot;&gt;</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Try dragging me!!&lt;/p&gt;</strong></div>
+		<div>
+			<strong>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			The id is passed to the selector function and the draggable function is called:</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>&nbsp;$(&quot;#draggable&quot;).draggable();</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<strong>Resizable</strong></div>
+		<div>
+			&nbsp;</div>
+		<div>
+			The &lt;div&gt; content for Resizable is;</div>
+		<div>
+			&nbsp;</div>
+		<div>
+			<div>
+				<strong>&nbsp; &lt;div id=&quot;resizable&quot; class=&quot;ui-widget-content&quot;&gt;</strong></div>
+			<div>
+				<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;h3 class=&quot;ui-widget-header&quot;&gt;Resizable&lt;/h3&gt;</strong></div>
+			<div>
+				<strong>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</strong></div>
+			<div>
+				&nbsp;</div>
+			<div>
+				The id passed to the selector function and resizable function is called</div>
+			<div>
+				&nbsp;</div>
+			<div>
+				<strong>$(&quot;#resizable&quot;).resizable();</strong></div>
+			<div>
+				&nbsp;</div>
+			<div>
+				<strong>Selectable</strong></div>
+			<div>
+				&nbsp;</div>
+			<div>
+				The &lt;div&gt; element of Selectable consists of the following list:</div>
+			<div>
+				&nbsp;</div>
+			<div>
+				<div>
+					<strong>&nbsp;&lt;div id=&quot;selectableDiv&quot;&gt;</strong></div>
+				<div>
+					<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;ol id=&quot;selectable&quot;&gt;</strong></div>
+				<div>
+					<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-widget-content&quot;&gt;Chelsea&lt;/li&gt;</strong></div>
+				<div>
+					<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-widget-content&quot;&gt;Southampton&lt;/li&gt;</strong></div>
+				<div>
+					<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-widget-content&quot;&gt;Aston Villa&lt;/li&gt;</strong></div>
+				<div>
+					<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-widget-content&quot;&gt;Arsenal&lt;/li&gt;</strong></div>
+				<div>
+					<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-widget-content&quot;&gt;Swansea City&lt;/li&gt;</strong></div>
+				<div>
+					<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/ol&gt;</strong></div>
+				<div>
+					<strong>&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</strong></div>
+				<div>
+					&nbsp;</div>
+				<div>
+					This id is passed to the selector function and the selectable() is called:</div>
+				<div>
+					&nbsp;</div>
+				<div>
+					<strong>$(&quot;#selectable&quot;).selectable();</strong></div>
+				<div>
+					&nbsp;</div>
+				<div>
+					<strong>Sortable</strong></div>
+				<div>
+					&nbsp;</div>
+				<div>
+					The &lt;div&gt; content for Sortable consists of a list as follows:</div>
+				<div>
+					&nbsp;</div>
+				<div>
+					<div>
+						&lt;div&gt;</div>
+					<div>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;ul id=&quot;sortable&quot;&gt;</div>
+					<div>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-state-default&quot;&gt;1&lt;/li&gt;</div>
+					<div>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-state-default&quot;&gt;2&lt;/li&gt;</div>
+					<div>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-state-default&quot;&gt;3&lt;/li&gt;</div>
+					<div>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-state-default&quot;&gt;4&lt;/li&gt;</div>
+					<div>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-state-default&quot;&gt;5&lt;/li&gt;</div>
+					<div>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-state-default&quot;&gt;6&lt;/li&gt;</div>
+					<div>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-state-default&quot;&gt;7&lt;/li&gt;</div>
+					<div>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-state-default&quot;&gt;8&lt;/li&gt;</div>
+					<div>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-state-default&quot;&gt;9&lt;/li&gt;</div>
+					<div>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-state-default&quot;&gt;10&lt;/li&gt;</div>
+					<div>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-state-default&quot;&gt;11&lt;/li&gt;</div>
+					<div>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;ui-state-default&quot;&gt;12&lt;/li&gt;</div>
+					<div>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;</div>
+					<div>
+						&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</div>
+					<div>
+						&nbsp;</div>
+					<div>
+						The id is passed to the selector function and the following calls are performed:</div>
+					<div>
+						&nbsp;</div>
+					<div>
+						<div>
+							<strong>$(&quot;#sortable&quot;).sortable();</strong></div>
+						<div>
+							<strong>$(&quot;#sortable&quot;).disableSelection();</strong></div>
+						<div>
+							&nbsp;</div>
+						<div>
+							<a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/jQuery/jQueryInteractions.html" target="_blank">Click here for the source code&nbsp;</a></div>
+						<div>
+							&nbsp;</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				&nbsp;</div>
+		</div>
+		<div>
+			&nbsp;</div>
+
+</body>
+</html>

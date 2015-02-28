@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="resources/xmlParser.js"></script>
+    <title>xmlParser</title>
+</head>
+<body>
+   
+    <div class="container">
+        <h2>XML Consumption using jQuery</h2>
+        <table id="chart" class="table">
+            <tr><th>Title</th><th>Author</th><th>Price</th></tr>
+        </table>
+
+        <hr/>
+
+        <p>
+            In this experiment, I have parsed a XML file using jQuery ajax request, and populate the parsed data in a table with the rows being dynamically generated.
+        </p>
+        <p>
+            In the &lt;body&gt;, a template for the class is set as follows:
+        </p>
+        <div>
+            &nbsp; &nbsp; &nbsp; &nbsp; &lt;table id=&quot;chart&quot; class=&quot;table&quot;&gt;
+        </div>
+        <div>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;tr&gt;&lt;th&gt;Title&lt;/th&gt;&lt;th&gt;Author&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;/tr&gt;
+        </div>
+        <div>
+            &nbsp; &nbsp; &nbsp; &nbsp; &lt;/table&gt;
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            In the JS file, when the page loads, the jQuery onload function is called and the ajax request parameters are set as below:
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            <div>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; type: &quot;GET&quot;,
+            </div>
+            <div>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; url: &quot;/web_resource/books.xml&quot;,
+            </div>
+            <div>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; dataType: &quot;xml&quot;,
+            </div>
+            <div>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; success: function (xml)
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                In the success function, the XML is parsed and the value of the Title, Author, Price are obtained and set in a new row.
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                For each &lt;book&gt; in the XML, the&nbsp;Title, Author, Price are retrieved and set in a new row.
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/jQuery/xmlParser.html" target="_blank">Click here to see the source file</a>
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/jQuery/resources/xmlParser.js" target="_blank">Click here to see the JS</a>
+            </div>
+	    <div>
+            	&nbsp;
+            </div>
+            <div>
+                <a href="http://net4.ccs.neu.edu/home/aswin90/fileview/Default.aspx?~/experiments/jQuery/resources/books.xml" target="_blank">Click here to see the XML file</a>
+            </div>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div>
+            &nbsp;
+        </div>
+
+    </div>
+
+</body>
+</html>
